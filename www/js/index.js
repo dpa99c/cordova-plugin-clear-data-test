@@ -5,7 +5,7 @@ function onDeviceReady(){
     ClearData.enableDebug();
 
     //Populate webview cache
-    $.get("http://www.bbc.co.uk");
+    $.get("https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json");
 }
 
 function clearCache(){
