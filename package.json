@@ -1,26 +1,26 @@
 {
-    "name": "cleardata.test",
-    "displayName": "Cordova Clear Data Test",
-    "version": "0.0.1",
-    "description": "An Cordova project to test/validate cordova-plugin-clear-data",
-    "author": "Dave Alden",
-    "license": "MIT",
-    "dependencies": {
-        "android": "0.0.8",
-        "cordova-android": "^6.3.0",
-        "cordova-ios": "^4.5.4",
-        "cordova-plugin-clear-data": "*",
-        "cordova-plugin-device": "^1.1.7",
-        "cordova-plugin-whitelist": "^1.3.3"
+  "name": "cleardata.test",
+  "displayName": "Cordova Clear Data Test",
+  "version": "0.0.1",
+  "description": "An Cordova project to test/validate cordova-plugin-clear-data",
+  "author": "Dave Alden",
+  "license": "MIT",
+  "dependencies": {
+    "android": "0.0.8",
+    "cordova-android": "^7.0.0",
+    "cordova-ios": "^4.5.4",
+    "cordova-plugin-clear-data": "*",
+    "cordova-plugin-device": "^1.1.7",
+    "cordova-plugin-whitelist": "^1.3.3"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {}
     },
-    "cordova": {
-        "plugins": {
-            "cordova-plugin-whitelist": {},
-            "cordova-plugin-device": {}
-        },
-        "platforms": [
-            "android",
-            "ios"
-        ]
-    }
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
 }

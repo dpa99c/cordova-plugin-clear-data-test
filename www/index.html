@@ -22,11 +22,16 @@
             <button onclick="clearCache()">Clear Webview cache</button>
         </section>
 
-        <section style="display: none">
+        <section>
             <button onclick="clearWebview()">Clear Webview data</button>
 
             <select id="webview-data" multiple="multiple">
-                <option value=""></option>
+                <option value="">[select none for all data]</option>
+                <option value="CACHE">Cache</option>
+                <option value="LOCAL_STORAGE">Local Storage</option>
+                <option value="INDEXED_DB">Indexed DB</option>
+                <option value="WEBSQL">WebSQL</option>
+                <option value="COOKIES">Cookies</option>
             </select>
         </section>
 
