@@ -11,12 +11,14 @@
     "cordova-ios": "^4.5.4",
     "cordova-plugin-clear-data": "*",
     "cordova-plugin-device": "^1.1.7",
+    "cordova-plugin-file": "^5.0.0",
     "cordova-plugin-whitelist": "^1.3.3"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-device": {}
+      "cordova-plugin-device": {},
+      "cordova-plugin-file": {}
     },
     "platforms": [
       "ios",

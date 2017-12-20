@@ -16,3 +16,7 @@ body {
 section{
     margin-top: 20px;
 }
+
+section.data p{
+    margin: 8px;
+}

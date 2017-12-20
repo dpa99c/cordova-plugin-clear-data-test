@@ -18,6 +18,29 @@
     <body>
         <h1>Clear Data Plugin Test</h1>
 
+        <p>Webview: <span id="webview"></span></p>
+
+        <section class="data">
+            <div class="webview">
+                <strong>Webview data</strong>
+                <p>Cache: <span class="cache"></span></p>
+                <p>Local Storage: <span class="localStorage"></span></p>
+                <p>IndexedDB: <span class="indexedDB"></span></p>
+                <p>WebSQL: <span class="webSQL"></span></p>
+                <p>Cookies: <span class="cookies"></span></p>
+            </div>
+        </section>
+
+        <section>
+            <button onclick="reload()">Reload</button>
+            <button class="android-only" onclick="exit()">Exit</button>
+        </section>
+
+        <section>
+            <button class="populate" onclick="populate()">Populate app data</button>
+        </section>
+
+
         <section>
             <button onclick="clearCache()">Clear Webview cache</button>
         </section>
