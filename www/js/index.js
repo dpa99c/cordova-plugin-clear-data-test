@@ -3,6 +3,7 @@ var ajaxURL = "https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json";
 
 var PRESENT = "PRESENT";
 var NOT_PRESENT = "NOT PRESENT";
+var webView;
 
 function onDeviceReady(){
     console.log("deviceready");
@@ -22,6 +23,7 @@ function onDeviceReady(){
             webView = "WKWebView";
         } else {
             webView = "UIWebView";
+            $('section.data .webview .cache').text("N/A");
         }
     }
 
@@ -61,29 +63,37 @@ function checkWebviewCache(){
     var isPresent = function(present){
         $('section.data .webview .cache').text(present ? PRESENT : NOT_PRESENT);
     };
-
+    var filepath, emptyCount;
     if(device.platform === "Android"){
-        var webviewCachePath = "org.chromium.android_webview";
-        var filepath = cordova.file.cacheDirectory + webviewCachePath;
-        checkFilepathExists(filepath, function(cacheFolderExists){
-            if(cacheFolderExists){
-                countEntriesInDirectory(filepath, function(count){
-                    isPresent(count > 2);
-                });
-            }else{
-                isPresent(false);
-            }
-        })
-    }else{ // iOS
-
+        emptyCount = 2;
+        if(webView === "Crosswalk"){
+            filepath = cordova.file.applicationStorageDirectory + "app_xwalkcore/Default/Cache";
+        }else{
+            filepath = cordova.file.cacheDirectory + "org.chromium.android_webview";
+        }
+    }else if(webView === "UIWebView"){ // iOS
+        emptyCount = 0;
+        filepath = cordova.file.cacheDirectory + "WebKit/NetworkCache/Version 11/Blobs";
     }
+
+    checkFilepathExists(filepath, function(cacheFolderExists){
+        if(cacheFolderExists){
+            countEntriesInDirectory(filepath, function(count){
+                isPresent(count > emptyCount);
+            });
+        }else{
+            isPresent(false);
+        }
+    })
 }
 
 /**
  * Populate data
  */
 function populate(){
-    populateWebviewCache(check);
+    populateWebviewCache(function(){
+        setTimeout(reload, 500);
+    });
 }
 
 function populateWebviewCache(done){
