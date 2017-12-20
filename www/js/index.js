@@ -27,7 +27,6 @@ function onDeviceReady(){
 
     $('#webview').text(device.platform + " " + webView);
 
-    ClearData.enableDebug();
     check();
 }
 
@@ -45,11 +44,7 @@ function clearCache(){
  * Check data
  */
 function reload(){
-    if(device.platform === "Android"){
-        ClearData.restart();
-    }else{
-        window.location.reload(true);
-    }
+    window.location.reload(true);
 }
 
 function exit(){
