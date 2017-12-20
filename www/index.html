@@ -21,50 +21,24 @@
         <p>Webview: <span id="webview"></span></p>
 
         <section class="data">
+            <strong>Cache data</strong>
             <div class="webview">
-                <strong>Webview data</strong>
-                <p>Cache: <span class="cache"></span></p>
-                <p>Local Storage: <span class="localStorage"></span></p>
-                <p>IndexedDB: <span class="indexedDB"></span></p>
-                <p>WebSQL: <span class="webSQL"></span></p>
-                <p>Cookies: <span class="cookies"></span></p>
+                <p><span class="cache"></span></p>
             </div>
         </section>
 
         <section>
             <button onclick="reload()">Reload</button>
-            <button class="android-only" onclick="exit()">Exit</button>
+            <button class="android-only" onclick="exit()">Exit app</button>
         </section>
 
         <section>
-            <button class="populate" onclick="populate()">Populate app data</button>
+            <button class="populate" onclick="populate()">Populate cache</button>
         </section>
 
 
         <section>
-            <button onclick="clearCache()">Clear Webview cache</button>
+            <button onclick="clearCache()">Clear cache</button>
         </section>
-
-        <section>
-            <button onclick="clearWebview()">Clear Webview data</button>
-
-            <select id="webview-data" multiple="multiple">
-                <option value="">[select none for all data]</option>
-                <option value="CACHE">Cache</option>
-                <option value="LOCAL_STORAGE">Local Storage</option>
-                <option value="INDEXED_DB">Indexed DB</option>
-                <option value="WEBSQL">WebSQL</option>
-                <option value="COOKIES">Cookies</option>
-            </select>
-        </section>
-
-        <section style="display: none" class="android-only">
-            <button onclick="clearApplication()">Clear Application data</button>
-
-            <select id="application-data" multiple="multiple">
-                <option value=""></option>
-            </select>
-        </section>
-
     </body>
 </html>
